@@ -1,0 +1,25 @@
+Host *
+    HostKeyAlgorithms +ssh-dss,ssh-rsa
+    PubkeyAcceptedKeyTypes +ssh-dss,ssh-rsa
+
+
+Host github.com
+    HostName github.com
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/mykey
+Host gitflic.ru
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/mykey
+
+
+
+Host stv
+    HostName my-ip-or-domain.ru
+    User myuser
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/id_rsa
+    #PasswordAuthentication no
+    PubkeyAuthentication yes
