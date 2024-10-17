@@ -21,3 +21,12 @@ services:
       MYSQL_PASSWORD: ukHLIUFNYiulgyi4h
     ports:
       - "3306:3306"
+  phpmyadmin:
+    image: dockerhub.timeweb.cloud/phpmyadmin/phpmyadmin
+    links:
+      - mysql-db
+    ports:
+      - "8181:80"
+    environment:
+      PMA_HOST: mysql-db
+      MYSQL_ROOT_PASSWORD: password
