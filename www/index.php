@@ -1,4 +1,11 @@
+<?// die('13213323'); ?>
+
+
+
 <?php
+
+
+
 $host = 'mysql-db';
 $user = 'db_user';
 $pass = 'ukHLIUFNYiulgyi4h';
@@ -15,8 +22,8 @@ echo "Connected to MySQL successfully";
 // Handle POST request
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['submit'])) {
-        $name = $_POST['name'];
-        $email = $_POST['email'];
+        $name = htmlspecialchars($_POST['name']);
+        $email = htmlspecialchars($_POST['email']);
 
         // Insert data into the database
         $sql = "INSERT INTO users (name, email) VALUES ('$name', '$email')";
@@ -36,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         if ($result->num_rows > 0) {
             echo "<br><br>Users:<br>";
             while ($row = $result->fetch_assoc()) {
+                print_r($row);
                 echo "Name: " . $row["name"] . " - Email: " . $row["email"] . "<br>";
             }
         } else {
