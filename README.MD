@@ -28,3 +28,7 @@ https://thriveread.com/apache-php-with-docker-mysql-and-phpmyadmin/
 Вводим пароль, и после этого у нас будет работать: 
 
     ssh stv
+
+## Миграции по созданию таблиц
+
+    ./yii migrate/create create_users_table --fields=name:string,email:string
