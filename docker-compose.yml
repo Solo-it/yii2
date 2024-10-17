@@ -1,7 +1,7 @@
-version: '3.9'
+version: "3.9"
 services:
   webserver:
-    container_name: PHP-webServer
+    container_name: PHP-webserver
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,3 +9,15 @@ services:
       - ./www:/var/www/html
     ports:
       - 8123:80
+    depends_on:
+      - mysql-db
+
+  mysql-db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: test_database
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
