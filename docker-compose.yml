@@ -18,6 +18,6 @@ services:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: test_database
       MYSQL_USER: db_user
-      MYSQL_PASSWORD: password
+      MYSQL_PASSWORD: ukHLIUFNYiulgyi4h
     ports:
       - "3306:3306"
